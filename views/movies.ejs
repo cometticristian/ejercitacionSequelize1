@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="movies/search" method="POST">
+        <input type="search" name="busqueda">
+        <input type="submit">
+        <select name="order" id="">
+            <option value="none">Ordenar por:</option>
+            <option value="date">Fecha de lanzamiento</option>
+            <option value="title">Titulo</option>
+            <option value="awards">Premios</option>
+            <option value="rating">Puntuacion</option>
+            <option value="length">Duracion</option>
+        </select>
+    </form>
+
+    <br>
+    <hr>
+    <% peliculas.forEach((pelicula) => { %>
+
+    <ul>
+        <li>
+            <a href="/movies/detail/<%= pelicula.id %>"><%= pelicula.title %></a>
+        </li>
+    </ul>
+
+    <% }) %>
+
+</body>
+
+</html>
